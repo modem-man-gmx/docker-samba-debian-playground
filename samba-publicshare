@@ -2,9 +2,7 @@
 
 docker run -ti \
                 --publish 445:445 \
-                --publish 137:137 \
-                --publish 138:138 \
                 --publish 139:139 \
                 --volume ${1:-`pwd`}:/srv \
-		--env workgroup=${2:-workgroup} \
-                jenserat/samba-publicshare
+				--env workgroup=${2:-workgroup} \
+                modemman/samba-dancer

@@ -1,6 +1,6 @@
 # Samba Folder Sharing
 
-This image allows you to easily share a folder to the public using the SMB protocol, similar to what `python3 -m http.server` offers for HTTP.
+This image allows you to easily share folders to the public using the SMB 2.x to newer protocol.
 
 ## Usage
 
@@ -9,10 +9,8 @@ To share a folder, bind it as a volume to the internal path `/srv` and expose th
 	docker run -td \
 		--publish 445:445 \
 		--publish 137:137 \
-		--publish 138:138 \
-		--publish 139:139 \
 		--volume /srv/samba:/srv \
-		jenserat/samba-publicshare
+		modemman/samba-dancer
 
 **Note:** observe the `-t` parameter, which attaches a pseudo-tty. This was not required on earlier releases of `smbd`. Without attaching a tty, `smbd` will exit immediately after starting up.
 If you use a docker-compose setup, you should add `tty: true` to your `docker-compose.yml`
@@ -20,6 +18,7 @@ If you use a docker-compose setup, you should add `tty: true` to your `docker-co
 Use the optional `workgroup` environment variable to set the workgroup:
 
 		--env workgroup=myworkgroup
+if ommitted, it is setting "home" as workgroup name, intented to use laptop.home, server.home DNS names assigned in FritzBox or PiHole or similar DNS server.
 
 The repository contains a wrapper script to easen up sharing folders, automatically exposing the ports as needed. Pass the path as first parameter (otherwise the working directory is shared), and optionally the work group as second parameter.
 

@@ -1,6 +1,11 @@
 # Samba Folder Sharing
 
-This image allows you to easily share folders to the public using the SMB 2.x to newer protocol.
+This image set up an SAMBA Server, alias SMB, alias CIFS, alias Windows File Sharing.
+It allows you to share folders of the host or this server to users using the SMB 2.x (or newer) protocol.
+Old 1.x protocols (NetBIOS-over-UDP on 137,138) are no longer supported.
+Printing is not yet supported.
+Printer driver files share is not yet supported.
+NetBIOS-over-TCP 139 is supported by may get removed.
 
 ## Usage
 
@@ -8,7 +13,7 @@ To share a folder, bind it as a volume to the internal path `/srv` and expose th
 
 	docker run -td \
 		--publish 445:445 \
-		--publish 137:137 \
+		--publish 139:139 \
 		--volume /srv/samba:/srv \
 		modemman/samba-dancer
 

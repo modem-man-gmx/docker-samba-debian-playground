@@ -1,5 +1,5 @@
-Copyright (c) 2014, Jens Erat <email@jenserat.de>
 Copyright (c) 2023, Mo Demman <MoDem-Man@gmx.net>
+Copyright (c) 2014, Jens Erat <email@jenserat.de>
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above

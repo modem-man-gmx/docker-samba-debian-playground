@@ -1,4 +1,6 @@
-FROM debian:12-slim   # Debian:12 is bookworm
+# debian:12 is bookworm
+FROM debian:12-slim
+
 MAINTAINER Mo Demman <modem-man@gmx.net>
 
 VOLUME /srv

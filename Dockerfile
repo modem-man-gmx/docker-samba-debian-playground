@@ -1,5 +1,5 @@
-FROM debian:bookworm-slim
-# ex: MAINTAINER Jens Erat <email@jenserat.de>
+FROM debian:12-slim   # Debian:12 is bookworm
+MAINTAINER Mo Demman <modem-man@gmx.net>
 
 VOLUME /srv
 EXPOSE 139 445

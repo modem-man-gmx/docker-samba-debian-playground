@@ -1,4 +1,1 @@
-# .dockerignore file
-LICENSE.md
-README.md
-samba-publicshare
+.git

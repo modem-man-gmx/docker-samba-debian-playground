@@ -19,4 +19,4 @@ COPY smb.conf /etc/samba/smb.conf
 # Pregenerate password database to prevent warning messages on container startup
 RUN /usr/sbin/smbd && sleep 10 && smbcontrol smbd shutdown
 
-ENTRYPOINT [ -z ${TERM} ] && echo 'Please attach a pseudo-tty (`docker run -t jenserat/samba-publicshare`)' || /usr/sbin/smbd -FSD -d1 --option=workgroup=${workgroup:-home}
+ENTRYPOINT [ -z ${TERM} ] && echo 'Please attach a pseudo-tty (`docker run -t docker.io/modemman/samba-dancer`)' || /usr/sbin/smbd -FSD -d1 --option=workgroup=${workgroup:-home}
